@@ -1,13 +1,9 @@
-``pyramid_ldap``
-================
+``pyramid_multildap``
+=====================
 
-``pyramid_ldap`` provides LDAP authentication services for your Pyramid
-application.  Thanks to the ever-awesome `SurveyMonkey
-<http://surveymonkey.com>`_ for sponsoring the development of this package!
+``pyramid_multildap`` is a friendly fork of `pyramid_ldap`_,
+incorporating some proposed but not (yet?) accepted upstream.
 
-See the documentation at
-http://docs.pylonsproject.org/projects/pyramid_ldap/en/latest/ for more
-information.
+.. include:: ORIG_README.rst
 
-This package will only work with Pyramid 1.3a9 and better.
-
+.. _`pyramid_ldap`: https://github.com/Pylons/pyramid_ldap

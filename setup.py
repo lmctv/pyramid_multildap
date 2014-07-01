@@ -20,9 +20,9 @@ sampleapp_extras = [
 testing_extras = ['nose', 'coverage']
 docs_extras = ['Sphinx']
 
-setup(name='pyramid_ldap',
+setup(name='pyramid_multildap',
       version='0.1',
-      description='pyramid_ldap',
+      description='pyramid_multildap',
       long_description=README + '\n\n' +  CHANGES,
       classifiers=[
         "Programming Language :: Python",
@@ -32,12 +32,13 @@ setup(name='pyramid_ldap',
         "Topic :: System :: Systems Administration :: Authentication/Directory :: LDAP",
         "License :: Repoze Public License",
         ],
-      author='Chris McDonough',
+      author='Chris McDonough, Lorenzo M. Catucci',
       author_email='pylons-discuss@groups.google.com',
       url='http://pylonsproject.org',
       license="BSD-derived (http://www.repoze.org/LICENSE.txt)",
       keywords='web pyramid pylons ldap',
-      packages=find_packages(),
+      packages=['pyramid_multildap'],
+      package_dir={'pyramid_multildap': 'pyramid_ldap'},
       include_package_data=True,
       zip_safe=False,
       install_requires=requires,
