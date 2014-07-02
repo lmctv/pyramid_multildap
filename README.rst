@@ -2,7 +2,12 @@
 =====================
 
 ``pyramid_multildap`` is a friendly fork of `pyramid_ldap`_,
-incorporating some proposed but not (yet?) accepted upstream.
+incorporating some changes which have been proposed upstream,
+but have not been accepted (yet?).
+
+The package is being developed at github:
+
+https://github.com/lmctv/pyramid_multildap
 
 .. include:: ORIG_README.rst
 

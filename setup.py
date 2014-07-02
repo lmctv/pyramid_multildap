@@ -4,7 +4,10 @@ from setuptools import setup, find_packages
 
 here = os.path.abspath(os.path.dirname(__file__))
 README = open(os.path.join(here, 'README.rst')).read()
+ORIG_README = open(os.path.join(here, 'ORIG_README.rst')).read()
 CHANGES = open(os.path.join(here, 'CHANGES.txt')).read()
+DESCR = README + '\n\n' + 'Original README follows:\n\n' + ORIG_README
+DESCR += '\nChanges:\n' + CHANGES
 
 requires = [
     'pyramid>=1.3a9',
@@ -21,9 +24,9 @@ testing_extras = ['nose', 'coverage']
 docs_extras = ['Sphinx']
 
 setup(name='pyramid_multildap',
-      version='0.1',
+      version='0.2a2',
       description='pyramid_multildap',
-      long_description=README + '\n\n' +  CHANGES,
+      long_description=DESCR,
       classifiers=[
         "Programming Language :: Python",
         "Framework :: Pylons",
@@ -34,7 +37,7 @@ setup(name='pyramid_multildap',
         ],
       author='Chris McDonough, Lorenzo M. Catucci',
       author_email='pylons-discuss@groups.google.com',
-      url='http://pylonsproject.org',
+      url='https://github.com/lmctv/pyramid_multildap',
       license="BSD-derived (http://www.repoze.org/LICENSE.txt)",
       keywords='web pyramid pylons ldap',
       packages=['pyramid_multildap'],
