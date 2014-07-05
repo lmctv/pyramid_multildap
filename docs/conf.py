@@ -39,6 +39,31 @@ if 'sphinx-build' in ' '.join(sys.argv): # protect against dumb importers
 
     sys.path.append(os.path.abspath('_themes'))
 
+def _name_replacer(line):
+    line = line.replace('pyramid_ldap', 'pyramid_multildap')
+    line = line.replace('============', '=================')
+    line = line.replace('http://github.com/Pylons', 'http://github.com/lmctv')
+    line = line.replace('api.rst', 'api_multildap.rst')
+    line = line.replace('-----------------------',
+                        '----------------------------')
+    return line
+
+orig_index = open('index.rst')
+head = open('multi_header.rst')
+orig_api = open('api.rst')
+
+with open('index_multildap.rst','w') as index_multi:
+    for ln in head:
+        index_multi.write(ln)
+
+    for ctr, ln in enumerate(orig_index):
+        if ctr >= 2:
+            index_multi.write(_name_replacer(ln))
+
+with open('api_multildap.rst','w') as api_multi:
+    for ln in orig_api:
+        api_multi.write(_name_replacer(ln))
+
 # General configuration
 # ---------------------
 
@@ -55,17 +80,18 @@ templates_path = ['.templates']
 source_suffix = '.rst'
 
 # The master toctree document.
-master_doc = 'index'
+master_doc = 'index_multildap'
 
 # General substitutions.
-project = 'pyramid_ldap'
-copyright = '2012, Agendaless Consulting <chrism@plope.com>'
+project = 'pyramid_multildap'
+copyright = '''2012, Agendaless Consulting <chrism@plope.com>, 
+2013-2014, pyramid_ldap contributors'''
 
 # The default replacements for |version| and |release|, also used in various
 # other places throughout the built documents.
 #
 # The short X.Y version.
-version = '0.1'
+version = '0.2'
 # The full version, including alpha/beta/rc tags.
 release = version
 
@@ -82,7 +108,7 @@ today_fmt = '%B %d, %Y'
 # searched for source files.
 #exclude_dirs = []
 
-exclude_patterns = ['_themes/README.rst',]
+exclude_patterns = ['_themes/README.rst','index.rst', 'multi_header.rst', 'api.rst']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -110,7 +136,7 @@ pygments_style = 'sphinx'
 sys.path.append(os.path.abspath('_themes'))
 html_theme_path = ['_themes']
 html_theme = 'pyramid'
-html_theme_options = dict(github_url='https://github.com/Pylons/pyramid_ldap')
+html_theme_options = dict(github_url='https://github.com/lmctv/pyramid_multildap')
 
 # The style sheet to use for HTML and HTML Help pages. A file of that name
 # must exist either in Sphinx' static/ path, or in one of the custom paths
