@@ -12,3 +12,6 @@ https://github.com/lmctv/pyramid_multildap
 .. include:: ORIG_README.rst
 
 .. _`pyramid_ldap`: https://github.com/Pylons/pyramid_ldap
+
+The package's documentation is hosted at
+http://pyramid-multildap.readthedocs.org/
