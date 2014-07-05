@@ -48,11 +48,11 @@ def _name_replacer(line):
                         '----------------------------')
     return line
 
-orig_index = open('index.rst')
+orig_index = open('index_orig.rst')
 head = open('multi_header.rst')
 orig_api = open('api.rst')
 
-with open('index_multildap.rst','w') as index_multi:
+with open('index.rst','w') as index_multi:
     for ln in head:
         index_multi.write(ln)
 
@@ -80,7 +80,7 @@ templates_path = ['.templates']
 source_suffix = '.rst'
 
 # The master toctree document.
-master_doc = 'index_multildap'
+master_doc = 'index'
 
 # General substitutions.
 project = 'pyramid_multildap'
@@ -108,7 +108,7 @@ today_fmt = '%B %d, %Y'
 # searched for source files.
 #exclude_dirs = []
 
-exclude_patterns = ['_themes/README.rst','index.rst', 'multi_header.rst', 'api.rst']
+exclude_patterns = ['_themes/README.rst', 'index_orig.rst', 'multi_header.rst', 'api.rst']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.

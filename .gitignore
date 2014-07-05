@@ -18,4 +18,4 @@ distribute-*.tar.gz
 env*/
 coverage.xml
 docs/api_multildap.rst
-docs/index_multildap.rst
+docs/index.rst
