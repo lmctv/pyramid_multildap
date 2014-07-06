@@ -48,9 +48,9 @@ setup(name='pyramid_ldap',
           'testing':testing_extras,
           },
       test_suite="pyramid_ldap",
-      entry_points = """\
-      [paste.app_factory]
-      sampleapp = sampleapp:main
+      entry_points="""\
+      [pyramid.scaffold]
+      ldapauth = pyramid_ldap.scaffolds:LdapAuthTemplate
       """,
       )
 

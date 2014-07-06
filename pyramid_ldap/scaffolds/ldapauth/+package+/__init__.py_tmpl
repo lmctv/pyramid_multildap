@@ -12,7 +12,7 @@ class RootFactory(object):
 
 def main(global_config, **settings):
     config = Configurator(settings=settings, root_factory=RootFactory)
-    config.include('pyramid_ldap')
+    # config.include('pyramid_ldap')
     config.set_authentication_policy(
         AuthTktAuthenticationPolicy('seekr1t', callback=groupfinder)
         )
@@ -34,9 +34,9 @@ def main(global_config, **settings):
         #'(&(objectCategory=group)(member=%(dn)s))',
         cache_period=60,
         )
-    config.add_route('sampleapp.root', '/')
-    config.add_route('sampleapp.login', '/login')
-    config.add_route('sampleapp.logout', '/logout')
+    config.add_route('{{project}}.root', '/')
+    config.add_route('{{project}}.login', '/login')
+    config.add_route('{{project}}.logout', '/logout')
     config.scan('.views')
     return config.make_wsgi_app()
-    
+

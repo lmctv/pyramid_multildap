@@ -7,16 +7,16 @@ from pyramid.security import remember, forget
 
 from pyramid_ldap import get_ldap_connector
 
-@view_config(route_name='sampleapp.root', permission='view')
+@view_config(route_name='{{project}}.root', permission='view')
 def logged_in(request):
     return Response('OK')
 
-@view_config(route_name='sampleapp.logout')
+@view_config(route_name='{{project}}.logout')
 def logout(request):
     headers = forget(request)
     return Response('Logged out', headers=headers)
 
-@view_config(route_name='sampleapp.login', renderer='templates/login.pt')
+@view_config(route_name='{{project}}.login', renderer='templates/login.pt')
 @forbidden_view_config(renderer='templates/login.pt')
 def login(request):
     url = request.current_route_url()
@@ -43,4 +43,4 @@ def login(request):
         password=password,
         error=error,
         )
-                
+
