@@ -20,7 +20,7 @@ testing_extras = ['nose', 'coverage']
 docs_extras = ['Sphinx']
 
 setup(name='pyramid_multildap',
-      version='0.2a3',
+      version='0.2a4',
       description='pyramid_multildap',
       long_description=DESCR,
       classifiers=[
