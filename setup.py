@@ -16,10 +16,6 @@ if not 'READTHEDOCS' in os.environ:
     # hail mary for readthedocs
     requires.extend(['ldappool', 'python-ldap'])
 
-sampleapp_extras = [
-    'waitress',
-    'pyramid_debugtoolbar',
-    ]
 testing_extras = ['nose', 'coverage']
 docs_extras = ['Sphinx']
 
@@ -47,7 +43,6 @@ setup(name='pyramid_multildap',
       install_requires=requires,
       tests_require=requires,
       extras_require = {
-          'sampleapp':sampleapp_extras,
           'docs':docs_extras,
           'testing':testing_extras,
           },
