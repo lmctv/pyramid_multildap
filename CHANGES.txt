@@ -1,6 +1,8 @@
 Next release
 ------------
 
+- Convert sampleapp to a minimal ldapauth scaffold
+
 - Add attrlist to LDAPQuery, set_login_query, set_groups_query to allow
   retrieved attributes to be filtered. (Default: All attributes on users, no
   attributes on groups). See https://github.com/Pylons/pyramid_ldap/pull/8
