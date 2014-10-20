@@ -46,7 +46,7 @@ class _LDAPQuery(object):
     def __str__(self):
         return ('base_dn=%(base_dn)s, filter_tmpl=%(filter_tmpl)s, '
                 'scope=%(scope)s, attrlist=%(attrlist)r, '
-                'cache_period=%(cache_period)s' 
+                'cache_period=%(cache_period)s, '
                 'search_after_bind=%(search_after_bind)s' % 
                 self.__dict__)
 
