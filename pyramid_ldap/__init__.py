@@ -369,7 +369,7 @@ def ldap_setup(config, uri, bind=None, passwd=None, pool_size=10, retry_max=3,
         registry = request.registry
         return Connector(registry, manager, realm)
 
-    config.set_request_property(get_connector, conn_identif, reify=True)
+    config.add_request_method(get_connector, conn_identif, reify=True)
 
     intr = config.introspectable(
         '%s setup' % intr_identif,

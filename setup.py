@@ -10,7 +10,7 @@ DESCR = README + '\n\n' + 'Original README follows:\n\n' + ORIG_README
 DESCR += '\nChanges:\n' + CHANGES
 
 requires = [
-    'pyramid>=1.3a9',
+    'pyramid>=1.4',
     ]
 if not 'READTHEDOCS' in os.environ:
     # hail mary for readthedocs
@@ -20,13 +20,12 @@ testing_extras = ['nose', 'coverage']
 docs_extras = ['Sphinx']
 
 setup(name='pyramid_multildap',
-      version='0.2a5',
+      version='0.2a6',
       description='pyramid_multildap',
       long_description=DESCR,
       classifiers=[
         "Programming Language :: Python",
         "Framework :: Pylons",
-        "Programming Language :: Python :: 2.6",
         "Programming Language :: Python :: 2.7",
         "Topic :: System :: Systems Administration :: Authentication/Directory :: LDAP",
         "License :: Repoze Public License",
@@ -54,4 +53,3 @@ setup(name='pyramid_multildap',
       ldapauth = pyramid_ldap.scaffolds:LdapAuthTemplate
       """,
       )
-

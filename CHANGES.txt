@@ -1,6 +1,12 @@
 Next release
 ------------
 
+- Replace usage of deprecated `set_request_property`
+  with `add_request_method`
+
+
+deprecated 
+
 - Convert sampleapp to a minimal ldapauth scaffold
 
 - Add attrlist to LDAPQuery, set_login_query, set_groups_query to allow
